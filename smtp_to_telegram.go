@@ -214,7 +214,7 @@ func main() {
 				"The maximum text file size is determined by `forwarded-attachment-max-size`.",
 			Value:   4095,
 			EnvVars: []string{"ST_MESSAGE_LENGTH_TO_SEND_AS_FILE"},
-		&cli.intFlag{
+		&cli.IntFlag{
 			Name:    "smtp-timeout-seconds",
 			Usage:   "SMTP timeout",
 			Value:   60,

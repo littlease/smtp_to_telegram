@@ -220,7 +220,6 @@ func main() {
 			Value:   60,
 			EnvVars: []string{"ST_SMTP_TIMEOUT_SECONDS"},
 		},
-		},
 	}
 	err := app.Run(os.Args)
 	if err != nil {

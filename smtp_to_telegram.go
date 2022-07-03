@@ -38,7 +38,7 @@ type SmtpConfig struct {
 	smtpListen          string
 	smtpPrimaryHost     string
 	smtpMaxEnvelopeSize int64
-	smtpTimeout         uint
+	smtpTimeout         int
 }
 
 type TelegramConfig struct {
@@ -104,7 +104,7 @@ func main() {
 			smtpListen:          c.String("smtp-listen"),
 			smtpPrimaryHost:     c.String("smtp-primary-host"),
 			smtpMaxEnvelopeSize: smtpMaxEnvelopeSize,
-			smtpTimeout:         c.Uint("smtp-timeout-seconds"),
+			smtpTimeout:         Int("smtp-timeout-seconds"),
 		}
 		forwardedAttachmentMaxSize, err := units.FromHumanSize(c.String("forwarded-attachment-max-size"))
 		if err != nil {
@@ -214,7 +214,7 @@ func main() {
 				"The maximum text file size is determined by `forwarded-attachment-max-size`.",
 			Value:   4095,
 			EnvVars: []string{"ST_MESSAGE_LENGTH_TO_SEND_AS_FILE"},
-		&cli.UintFlag{
+		&cli.intFlag{
 			Name:    "smtp-timeout-seconds",
 			Usage:   "SMTP timeout",
 			Value:   60,

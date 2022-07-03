@@ -38,7 +38,7 @@ type SmtpConfig struct {
 	smtpListen          string
 	smtpPrimaryHost     string
 	smtpMaxEnvelopeSize int64
-	smtpTimeout         int
+	smtpTimeout         uint
 }
 
 type TelegramConfig struct {

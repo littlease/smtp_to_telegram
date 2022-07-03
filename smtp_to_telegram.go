@@ -104,7 +104,7 @@ func main() {
 			smtpListen:          c.String("smtp-listen"),
 			smtpPrimaryHost:     c.String("smtp-primary-host"),
 			smtpMaxEnvelopeSize: smtpMaxEnvelopeSize,
-			smtpTimeout:         Int("smtp-timeout-seconds"),
+			smtpTimeout:         c.Int("smtp-timeout-seconds"),
 		}
 		forwardedAttachmentMaxSize, err := units.FromHumanSize(c.String("forwarded-attachment-max-size"))
 		if err != nil {
